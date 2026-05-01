@@ -1,0 +1,22 @@
+# Build outputs
+*.exe
+*.o
+*.out
+
+# Make artifacts
+*.a
+*.lib
+
+# Debug / temp
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VSCode / editors
+.vscode/
+.idea/
+
+# CMake
+build/
