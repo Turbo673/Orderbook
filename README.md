@@ -6,7 +6,7 @@
 [![C++](https://img.shields.io/badge/C%2B%2B-17-blue)]()
 [![Tests](https://img.shields.io/badge/tests-doctest-green)]()
 
-![project-teaser](./images/project-teaser.png)
+![project-teaser](./images/Orderbook.png)
 
 A C++ matching engine that implements price time priority, multiple order types, and real time trades
 
