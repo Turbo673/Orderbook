@@ -1,4 +1,4 @@
-# Makefile for Orderbook
+# Makefile for OrderBook
 DEBUG = -g
 
 VERSION = -std=c++20 -Wall
@@ -7,7 +7,7 @@ CXX = g++
 
 CFLAGS = -pedantic -Wall -Wextra $(VERSION) $(DEBUG)
 
-TARGET = orderbook.exe
+TARGET = orderBook.exe
 TEST = test.exe
 
 SRC = main.cpp OrderBook.cpp

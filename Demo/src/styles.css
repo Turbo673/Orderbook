@@ -2,7 +2,7 @@
   color: white;
   background: black;
   font-family:
-  Arial, Helvetica, sans-serif;
+  Arial;
   text-rendering: optimizeLegibility;
 }
 
@@ -79,40 +79,30 @@ h2 {
 }
 
 .metric span {
-  color: #82909b;
-  font-size: 0.67rem;
+    font-size: 0.5rem;
   font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
 .metric strong {
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
-  font-size: 1.05rem;
+  font-family: Arial;
+  font-size: 1rem;
 }
 
 .workspace-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.55fr) minmax(280px, 0.8fr);
-  gap: 0.9rem;
+  grid-template-columns: minmax(0, 1.8fr) minmax(280px, 1fr);
 }
 
 .panel {
-  overflow: hidden;
-  border: 1px solid #202a31;
-  border-radius: 0.7rem;
   background: rgba(14, 19, 23, 0.93);
-  box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.14);
 }
 
 .panel-heading {
   justify-content: space-between;
-  padding: 0.9rem 1rem;
+  padding: 1rem 1rem;
   border-bottom: 1px solid #202a31;
-}
-
-.live-dot {
-  color: #73dca4;
 }
 
 .depth-header,
@@ -121,9 +111,9 @@ h2 {
 .trade-row {
   display: grid;
   align-items: center;
-  min-height: 1.7rem;
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
-  font-size: 0.72rem;
+  min-height: 1.5rem;
+  font-family: Arial;
+  font-size: 1rem;
 }
 
 .depth-header,
@@ -135,9 +125,7 @@ h2 {
 .trade-header {
   min-height: 1.8rem;
   padding: 0 1rem;
-  color: #73818c;
-  border-bottom: 1px solid #202a31;
-  font-family: inherit;
+  font-family: Arial;
   font-size: 0.61rem;
   font-weight: 800;
   letter-spacing: 0.1em;
@@ -147,7 +135,6 @@ h2 {
 .depth-row {
   position: relative;
   padding: 0 1rem;
-  border-bottom: 1px solid rgba(36, 47, 55, 0.46);
 }
 
 .depth-row span {
