@@ -1,27 +1,30 @@
-# Makefile for OrderBook
-DEBUG = -g
-
-VERSION = -std=c++20 -Wall
-
 CXX = g++
 
-CFLAGS = -pedantic -Wall -Wextra $(VERSION) $(DEBUG) -Iinclude
+CFLAGS = -std=c++20 -Wall -Wextra -pedantic -Iinclude
+DEBUG_FLAGS = -std=c++20 -Wall -Wextra -pedantic -g -Iinclude
+
+ifeq ($(debug),1)
+	CURRENT_FLAGS := $(DEBUG_FLAGS)
+else
+	CURRENT_FLAGS := $(CFLAGS)
+endif
 
 TARGET = orderBook.exe
 TEST = test.exe
 
 SRC = src/main.cpp src/Orderbook.cpp
-UNITTEST_SRC = Testing/test.cpp src/Orderbook.cpp
+UNITTEST_SRC = tests/test.cpp src/Orderbook.cpp
 
 all:
-	$(CXX) $(CFLAGS) $(SRC) -o $(TARGET)
+	$(CXX) $(CURRENT_FLAGS) $(SRC) -o $(TARGET)
+
+unit:
+	$(CXX) $(CURRENT_FLAGS) $(UNITTEST_SRC) -o $(TEST)
 
 run:
 	$(TARGET)
 
-unit:
-	$(CXX) $(CFLAGS) $(UNITTEST_SRC) -o $(TEST)
-
 clean:
 	del $(TARGET) $(TEST) *.o /Q
-	@echo clean done
+
+.PHONY: all run unit clean
