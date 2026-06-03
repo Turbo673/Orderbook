@@ -1,6 +1,5 @@
 # Multi Order Book Matching Engine
 
-[![Build Status](https://github.com/Turbo673/Orderbook/actions/workflows/ci.yml/badge.svg)](https://github.com/Turbo673/Orderbook/actions/workflows/ci.yml)
 [![License](https://img.shields.io/github/license/Turbo673/Orderbook)](LICENSE)
 [![Latest Release](https://img.shields.io/github/v/release/Turbo673/Orderbook)](https://github.com/Turbo673/Orderbook/releases)
 [![C++](https://img.shields.io/badge/C%2B%2B-17-blue)]()
