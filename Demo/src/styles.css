@@ -1,0 +1,396 @@
+:root {
+  color: white;
+  background: black;
+  font-family:
+  Arial, Helvetica, sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  background: black
+}
+
+button {
+  color: #cbd4da;
+  background: transparent;
+  font: Arial;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  color: white;
+}
+
+.app-shell {
+  margin: auto;
+}
+
+.panel-heading,
+.order-form,
+.order-type-group,
+.order-fields,
+.field-group {
+  display: flex;
+  align-items: center;
+}
+
+h2, p {
+  margin: 0;
+}
+
+h2 {
+  font-size: 0.93rem;
+}
+
+.eyebrow,
+.live-dot,
+.counter {
+  color: white
+}
+
+.eyebrow {
+  margin-bottom: 0.28rem;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: 1rem;
+  border: 1px solid whitesmoke;
+  background: black;
+}
+
+.metric {
+  display: grid;
+  gap: 0.34rem;
+  padding: 0.85rem 1rem;
+  border-right: 1px solid #202a31;
+}
+
+.metric:last-child {
+  border-right: 0;
+}
+
+.metric span {
+  color: #82909b;
+  font-size: 0.67rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.metric strong {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 1.05rem;
+}
+
+.workspace-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(280px, 0.8fr);
+  gap: 0.9rem;
+}
+
+.panel {
+  overflow: hidden;
+  border: 1px solid #202a31;
+  border-radius: 0.7rem;
+  background: rgba(14, 19, 23, 0.93);
+  box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.14);
+}
+
+.panel-heading {
+  justify-content: space-between;
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid #202a31;
+}
+
+.live-dot {
+  color: #73dca4;
+}
+
+.depth-header,
+.depth-row,
+.trade-header,
+.trade-row {
+  display: grid;
+  align-items: center;
+  min-height: 1.7rem;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 0.72rem;
+}
+
+.depth-header,
+.depth-row {
+  grid-template-columns: minmax(0, 1fr) 5rem 3.7rem;
+}
+
+.depth-header,
+.trade-header {
+  min-height: 1.8rem;
+  padding: 0 1rem;
+  color: #73818c;
+  border-bottom: 1px solid #202a31;
+  font-family: inherit;
+  font-size: 0.61rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.depth-row {
+  position: relative;
+  padding: 0 1rem;
+  border-bottom: 1px solid rgba(36, 47, 55, 0.46);
+}
+
+.depth-row span {
+  z-index: 1;
+}
+
+.depth-fill {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.2;
+  transition: width 260ms ease;
+}
+
+.depth-buy .depth-fill {
+  background: #3bc77f;
+}
+
+.depth-sell .depth-fill {
+  background: #ed6a6a;
+}
+
+.depth-orders {
+  color: #8a98a3;
+}
+
+.depth-buy .depth-price,
+.text-bid {
+  color: #67d89b;
+}
+
+.depth-sell .depth-price,
+.text-ask {
+  color: #f18484;
+}
+
+.spread-row {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-height: 2.1rem;
+  padding: 0 1rem;
+  color: #8f9ea9;
+  border-top: 1px solid #29343c;
+  border-bottom: 1px solid #29343c;
+  background: #11181d;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 0.69rem;
+}
+
+.spread-row strong {
+  color: #dce4e9;
+}
+
+.trade-header,
+.trade-row {
+  grid-template-columns: 3.5rem 1fr 3rem 4.3rem;
+}
+
+.trade-row {
+  min-height: 2rem;
+  padding: 0 1rem;
+  border-bottom: 1px solid rgba(36, 47, 55, 0.55);
+}
+
+.trade-row time,
+.trade-row > span:nth-child(3) {
+  color: #96a3ac;
+}
+
+.trade-side {
+  font-family: inherit;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.trade-buy {
+  color: #67d89b;
+}
+
+.trade-sell {
+  color: #f18484;
+}
+
+.empty-state {
+  padding: 1rem;
+  color: #82909b;
+  font-size: 0.76rem;
+  line-height: 1.6;
+}
+
+.order-panel {
+  margin-top: 0.9rem;
+}
+
+.order-form {
+  gap: 0.85rem;
+  padding: 0.75rem 1rem;
+}
+
+.order-type-group,
+.field-group {
+  gap: 0.4rem;
+}
+
+.order-fields {
+  gap: 0.8rem;
+  margin-left: auto;
+}
+
+.control-label {
+  color: #82909b;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.segmented-control {
+  display: flex;
+  gap: 0.1rem;
+  padding: 0.15rem;
+  border-radius: 999px;
+  background: #080c0e;
+}
+
+.segmented-control button {
+  min-width: 2.6rem;
+  padding: 0.42rem 0.64rem;
+}
+
+.order-types button {
+  min-width: auto;
+}
+
+input {
+  width: 5.8rem;
+  border: 1px solid #28343a;
+  border-radius: 0.45rem;
+  padding: 0.48rem 0.52rem;
+  color: #dce5e8;
+  background: #080c0e;
+  font: inherit;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 0.72rem;
+}
+
+input:focus {
+  border-color: #63737b;
+  outline: none;
+}
+
+input:disabled {
+  color: #536069;
+  cursor: not-allowed;
+  opacity: 0.58;
+}
+
+.primary-button {
+  min-width: 4.5rem;
+  color: #101412;
+  background: #dce9df;
+}
+
+.primary-button:hover {
+  color: #080b0e;
+  background: #f0f6f1;
+}
+
+.quiet-button {
+  color: #91a0a8;
+}
+
+.selected {
+  color: #e7edef;
+  background: #263137;
+}
+
+.buy-button {
+  color: #7cd7a6;
+}
+
+.sell-button {
+  color: #ec9393;
+}
+
+.process-button {
+  white-space: nowrap;
+}
+
+.order-status {
+  padding: 0.68rem 1rem;
+  color: #9eabb2;
+  border-top: 1px solid #202a31;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 0.7rem;
+}
+
+@media (max-width: 960px) {
+  .workspace-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .order-form {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .order-fields {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 620px) {
+  .app-shell {
+    width: min(100% - 1rem, 38rem);
+    padding-top: 0.7rem;
+  }
+
+  .summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .metric:nth-child(2) {
+    border-right: 0;
+  }
+
+  .metric:nth-child(-n + 2) {
+    border-bottom: 1px solid #202a31;
+  }
+
+  .order-form,
+  .order-type-group,
+  .order-fields {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .order-types {
+    flex-wrap: wrap;
+    border-radius: 0.7rem;
+  }
+}

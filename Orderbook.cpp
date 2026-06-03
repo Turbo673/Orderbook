@@ -18,7 +18,7 @@ void OrderBook::PruneGoodForDayOrders()
 		localtime_s(&now_parts, &now_c);
 
 
-		// if the time is past 4pm then we can add one more date
+		// if time passes 4pm then we add one more date
 		if (now_parts.tm_hour >= end.count())
 			now_parts.tm_mday += 1;
 
@@ -42,9 +42,9 @@ void OrderBook::PruneGoodForDayOrders()
 		{
 			std::scoped_lock ordersLock{ ordersMutex_ };
 
-			for (const auto& [_, entry] : orders_)
+			for (const auto& entry : orders_)
 			{
-				const auto& [order, _] = entry;
+				const auto& order = entry.second.order_;
 
 				if (order->GetOrderType() != OrderType::GoodForDay)
 					continue;
@@ -164,6 +164,12 @@ bool OrderBook::CanFullyFill(Side side, Price price, Quantity quantity) const
 	return false;
 }
 
+/**
+ * @brief
+ * @param price from Price class
+ * @param side from Side class
+ * @return true if price is either greater than ask or false if less than ask
+ */
 bool OrderBook::CanMatch(Side side, Price price) const
 {
 	if (side == Side::Buy)
@@ -250,7 +256,7 @@ Trades OrderBook::MatchOrders()
 		auto& [_, bids] = *bids_.begin();
 		auto& order = bids.front();
 		if (order->GetOrderType() == OrderType::FillandKill)
-			CancelOrder(order->GetOrderId());
+			CancelOrderInternal(order->GetOrderId());
 	}
 
 	if (!asks_.empty())
@@ -258,7 +264,7 @@ Trades OrderBook::MatchOrders()
 		auto& [_, asks] = *asks_.begin();
 		auto& order = asks.front();
 		if (order->GetOrderType() == OrderType::FillandKill)
-			CancelOrder(order->GetOrderId());
+			CancelOrderInternal(order->GetOrderId());
 	}
 
 	return trades;

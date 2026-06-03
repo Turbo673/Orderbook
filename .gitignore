@@ -20,3 +20,7 @@ Thumbs.db
 
 # CMake
 build/
+
+# React demo
+Demo/node_modules/
+Demo/dist/

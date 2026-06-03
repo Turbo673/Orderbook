@@ -2,12 +2,23 @@
 A C++ matching engine that implements price time priority, multiple order types, and real time trades
 ---
 
-### Demo 
-[*Working on the Demo]
+### Demo (TypeScript + React)
 
-- Real-time order matching 
+- Nasdaq-style NVDA order-book demo
 - Best bid/ask updates
-- Trade execution output
+- NVDA trade updates
+
+Run the visualizer:
+
+```powershell
+cd Demo
+npm install
+npm run dev
+```
+
+The current UI uses a deterministic TypeScript simulation and is not connected to
+the C++ engine yet. Its typed snapshot and trade-event boundary is intended to
+be replaced by an HTTP or WebSocket adapter over the C++ engine.
 
 ---
 
@@ -18,7 +29,7 @@ A C++ matching engine that implements price time priority, multiple order types,
 - Partial fills
 - Immediate or Cancel (IOC) and Fill or Kill (FOK)
 - Execution report generation
-- CSV order replay
+- CSV order processing
 - Benchmark testing
 
 ---
