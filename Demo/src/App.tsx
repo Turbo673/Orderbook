@@ -102,8 +102,7 @@ function BookPanel({ market }: { market: MarketState }) {
     <section className="panel book-panel">
       <div className="panel-heading">
         <div>
-          <p className="eyebrow">NASDAQ</p>
-          <h2>NVDA Market Depth</h2>
+          <p className="eyebrow">Orderbook</p>
         </div>
         <span className="live-dot">NVDA</span>
       </div>
@@ -162,10 +161,6 @@ function TapePanel({ trades }: { trades: Trade[] }) {
   return (
     <section className="panel tape-panel">
       <div className="panel-heading">
-        <div>
-          <p className="eyebrow">NASDAQ</p>
-          <h2>NVDA Trades</h2>
-        </div>
         <span className="counter">{trades.length} trades</span>
       </div>
 
@@ -180,9 +175,7 @@ function TapePanel({ trades }: { trades: Trade[] }) {
         {trades.length > 0 ? (
           trades.map((trade) => <TradeRow key={trade.id} trade={trade} />)
         ) : (
-          <div className="empty-state">
-            NVDA trades appear when marketable orders consume available liquidity.
-          </div>
+          <div className="empty-state"></div>
         )}
       </div>
     </section>
@@ -195,7 +188,6 @@ function App() {
   const [side, setSide] = useState<Aggressor>("buy");
   const [quantity, setQuantity] = useState("10");
   const [price, setPrice] = useState("100.00");
-  const [status, setStatus] = useState("Ready to process an NVDA order.");
 
   const bestBid = market.bids[0].price;
   const bestAsk = market.asks[0].price;
@@ -253,10 +245,6 @@ function App() {
 
       <section className="panel order-panel" aria-label="NVDA order entry">
         <div className="panel-heading">
-          <div>
-            <p className="eyebrow">NVDA</p>
-            <h2>NASDAQ Order Entry</h2>
-          </div>
           <button className="quiet-button" onClick={resetMarket}>
             Reset book
           </button>
