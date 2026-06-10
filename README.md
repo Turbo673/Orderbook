@@ -23,33 +23,13 @@ A C++ matching engine that implements price time priority, multiple order types,
 * Best bid/ask updates
 * NVDA trade updates
 
-Run the visualizer:
-
-```powershell
-cd C:\Users\User\Orderbook\Demo
-npm install
-npm run build
-npm run dev
-```
-
-```cmd
-cd C:\Users\User\Orderbook\Demo
-npm install
-npm run build
-npm run dev
-```
-
-The current UI uses a TypeScript/React simulation and is not connected to
-the C++ engine. This is a demo for people to understand how FOC, IOC, and other order types work. Its typed snapshot and trade-event boundary is intended to
-be replaced by an HTTP or WebSocket adapter over the C++ engine.
-
 ---
 
 ## Installation
 
-Clone the repository:
+Clone the repo:
 
-```bash
+```cmd
 git clone https://github.com/Turbo673/Orderbook.git
 cd Orderbook
 ```
@@ -57,28 +37,36 @@ cd Orderbook
 Run the Engine:
 
 ```cmd
+cd C:\Users\User\Orderbook
 make
 ```
 
 ---
 
-## Usage
-
-Run the Engine:
-
-```cmd
-make
-```
-
 Run the Doctest:
 
-Run the Engine:
-
 ```cmd
+cd C:\Users\User\Orderbook\tests
 make test
 ```
 
 ---
+
+Run the visualizer:
+
+```cmd
+cd C:\Users\User\Orderbook\Demo
+npm install
+npm run build
+npm run dev
+```
+
+```cmd
+cd C:\Users\User\Orderbook\Demo
+npm install
+npm run build
+npm run dev
+```
 
 ## Features
 
@@ -126,12 +114,6 @@ There will a link to the system design document: [System Design](https://github.
 * System Design: [System Design](https://github.com/)
 * Demo: TypeScript + React visualizer
 * Tests: Doctest
-
----
-
-## Community
-
-Contributions, issues, and feedback are welcome.
 
 ---
 
